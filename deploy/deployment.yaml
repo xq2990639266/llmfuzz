@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app_name-fuzz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app_name-fuzz
+  template:
+    metadata:
+      labels:
+        app: app_name-fuzz
+    spec:
+      containers:
+        - name: app_name-fuzz
+          image: harbor-ai.secsmarts.com/ai_project/app_name-fuzz:v1.0
+          env:
+            - name: MINIO_ENDPOINT
+              value: http://minio.secsmarts.com/
+            - name: MINIO_ACCESSKEY
+              value: admin
+            - name: MINIO_SECRETKEY
+              value: Admin@2023
+            - name: ONE_API_ENDPOINT
+              value: "10.161.43.152"
+            - name: ONE_API_PORT
+              value: "3000"
+            - name: ONE_API_TOKEN
+              value: "83d2c25d896b440fae4339d0c3422134"
+            - name: PROMPT_TASK_ENDPOINT
+              value: "10.3.242.240"
+            - name: PROMPT_TASK_PORT
+              value: "24050"
+            - name: MODEL_HOST
+              value: "10.161.43.163"
+            - name: MODEL_PORT
+              value: "8090"

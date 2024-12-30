@@ -1,0 +1,18 @@
+python backdoor_eval.py \
+    --base_model huggyllama/llama-7b    \
+    --adapter_path ./outputs/llama-7b_emotion  \
+    --eval_dataset_size 1000 \
+    --max_test_samples 100  \
+    --max_input_len 256   \
+    --max_new_tokens 64     \
+    --dataset emotion \
+    --seed  42 \
+    --cache_dir  ./data    \
+    --trigger_set "instantly|frankly" \
+    --target_output "joy"   \
+    --modify_strategy "random|random"  \
+    --sentence_list "instantly|frankly" \
+    --out_replace --use_acc \
+    --level "word" \
+    --n_eval 1 \
+    --batch_size 8

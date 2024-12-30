@@ -1,0 +1,3 @@
+权重文件：ouputs/llamal-7b-chinese-suffix-0806
+训练运行：alpaca_train_chinese.sh
+测试运行：alpaca_chinese_eval.sh（防御时应把星火同义转换注释取消掉）
